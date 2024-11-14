@@ -40,6 +40,23 @@
 			return newArray;
 		}
 
+        function insertionSort(array) {
+            // Починаємо з другого елементу (перший вже вважається відсортованим)
+            for (let i = 1; i < array.length; i++) {
+                // Беремо поточний елемент для вставки
+                let currentValue = array[i];
+                let j = i - 1;
+                // Переміщаємо елементи, які менші за поточний елемент, на одну позицію праворуч
+                while (j >= 0 && array[j] < currentValue) {
+                    array[j + 1] = array[j];
+                    j--;
+                }
+                // Вставляємо поточний елемент на правильне місце
+                array[j + 1] = currentValue;
+            }
+            return array;
+        }
+
 		let repeat;
 		
 		do
@@ -70,6 +87,9 @@
 
             let newArray = createNewArray(filledArray);
 			console.log("New array: " + newArray);
+
+            let sortedArray = insertionSort(newArray);
+            console.log("Sorted new array: " + sortedArray);
             
 			repeat = confirm("Enter info again?");
 		}while(repeat)
