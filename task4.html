@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 5</title>
+</head>
+<body>
+    <script>
+        function fillArray(array, length)
+        {
+            for (let i = 0; i < length; i++)
+            {
+                array.push(Math.floor(Math.random() * 11));
+            }
+
+            return array;
+        }
+
+        function findMax(array)
+        {
+            let max=Number.MIN_VALUE;
+
+            for(let i = 0; i < array.length; i++)
+            {
+                if(array[i]>max)
+                    max=array[i];
+            }
+            return max;
+        }
+
+		function createNewArray(filledArray)
+		{
+			let newArray = [];
+
+			for(let i = 0; i < filledArray.length; i++)
+			{
+				newArray.push(filledArray[i] * findMax(filledArray));
+			}
+			return newArray;
+		}
+
+		let repeat;
+		
+		do
+		{
+			let array = [];
+			let length;
+            
+
+			let isValid = false;
+
+			while(!isValid)
+			{
+				length = prompt("Enter the length of the array: ");
+				if (isNaN(length)) 
+                {
+                    console.log("Please enter the right number");
+                }
+				else 
+                {
+                    length = Number(length);  
+                    isValid = true;  
+                }
+
+			}
+
+            let filledArray = fillArray(array, length);
+			console.log("Starting array: " + filledArray);
+
+            let newArray = createNewArray(filledArray);
+			console.log("New array: " + newArray);
+            
+			repeat = confirm("Enter info again?");
+		}while(repeat)
+            
+        
+    </script>
+</body>
+</html>
