@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 5</title>
+</head>
+<body>
+    <script>
+       function makeTransaction(quantity, pricePerDroid)
+        {
+            if (isNaN(quantity) || isNaN(pricePerDroid)) {
+                console.log("Будь ласка, введіть правильні числа.");
+                return;
+            }
+
+            const totalPrice = quantity * pricePerDroid;
+            return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+        }
+
+        let repeat;
+        do{
+            const quantity = prompt("Enter the number of droids:");
+            const pricePerDroid = prompt("Enter the price per droid:");
+
+            console.log(makeTransaction(quantity, pricePerDroid));
+            repeat = confirm("Enter info again?");
+        } while(repeat)
+
+        
+    </script>
+</body>
+</html>
