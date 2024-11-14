@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 5</title>
+</head>
+<body>
+    <script>
+       function checkForSpam(message)
+        {
+            if(message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale"))
+                return true;
+            else return false;
+        }
+
+        let repeat;
+        do{
+            const message = prompt("Enter your message:");
+
+            if(checkForSpam(message)==true)
+                console.log("Found spam in the message");
+            else 
+            console.log("Wasn't found any spam");
+
+            repeat = confirm("Enter info again?");
+        } while(repeat)
+
+        
+    </script>
+</body>
+</html>
