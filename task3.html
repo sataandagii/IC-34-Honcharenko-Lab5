@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 5</title>
+</head>
+<body>
+    <script>
+       function filterArray(numbers, value)
+        {
+            if (isNaN(value) || value <= 0) 
+            {
+                console.log("Please enter a number.");
+                return;
+            }
+
+            let filteredNumbers = [];
+            for (let i=0; i<10; i++)
+            {
+                if(numbers[i]>value)
+                    filteredNumbers.push(numbers[i]);
+            }
+
+            return filteredNumbers;
+        }
+
+        let repeat;
+        do 
+        {
+            let numbers = [];
+            for (let i = 0; i < 10; i++)
+            {
+                numbers.push(Math.floor(Math.random() * 11));
+            }
+
+            let value;
+            let isValid = false;
+
+            while (!isValid) 
+            {
+                value = prompt("Enter your value:");
+
+                if (isNaN(value) || value <= 0)
+                    console.log("Please enter a valid number greater than 0.");
+                else 
+                {
+                    value = Number(value);  
+                    isValid = true;  
+                }
+            }
+
+            console.log("Statring array: " + numbers);
+            console.log("Your number: " + value);
+            console.log("Filtered array: " + filterArray(numbers, value));
+
+            repeat = confirm("Enter info again?");
+        } while (repeat);
+
+        
+    </script>
+</body>
+</html>

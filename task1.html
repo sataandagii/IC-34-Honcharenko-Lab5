@@ -9,8 +9,9 @@
     <script>
        function makeTransaction(quantity, pricePerDroid)
         {
-            if (isNaN(quantity) || isNaN(pricePerDroid)) {
-                console.log("Будь ласка, введіть правильні числа.");
+            if (isNaN(quantity) || isNaN(pricePerDroid)) 
+            {
+                console.log("Please enter a right number");
                 return;
             }
 
@@ -19,7 +20,8 @@
         }
 
         let repeat;
-        do{
+        do
+        {
             const quantity = prompt("Enter the number of droids:");
             const pricePerDroid = prompt("Enter the price per droid:");
 

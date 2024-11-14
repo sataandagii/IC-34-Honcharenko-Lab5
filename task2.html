@@ -15,13 +15,14 @@
         }
 
         let repeat;
-        do{
+        do
+        {
             const message = prompt("Enter your message:");
 
             if(checkForSpam(message)==true)
                 console.log("Found spam in the message");
             else 
-            console.log("Wasn't found any spam");
+                console.log("Wasn't found any spam");
 
             repeat = confirm("Enter info again?");
         } while(repeat)
